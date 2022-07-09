@@ -1,48 +1,54 @@
 ﻿#include <iostream>
 using namespace std;
-enum Months {
-    Январь=1,
-    Февраль,
-    Март,
-    Апрель,
-    Май,
-    Июнь,
-    Июль,
-    Августь,
-    Сентябрь,
-    Октябрь,
-    Ноябрь,
-    Декабрь,
+enum class Months {
+    January=1,Febuary,March,April,May,June,July,August,September,October,November,December,
 };
 
 int main()
 {
     setlocale(LC_ALL, "rus");
-    int num_month = 0;
+    Months month = Months::January;
+    int value = static_cast<int>(month);
     do
     {
        
-        cout << "Введите номер месяца: ";
-        cin >> num_month;
-        switch (num_month)
+        cout << "Enter month number: ";
+        cin >> value;
+        
+        switch (value)
         {
-        case 0: cout << "До свидания" << endl; continue;
-        case 1: cout << "Январь"<<endl; break;
-        case 2: cout << "Февраль" << endl; break;
-        case 3: cout << "Март" << endl; break;
-        case 4: cout << "Апрель" << endl; break;
-        case 5: cout << "Май" << endl; break;
-        case 6: cout << "Июнь" << endl; break;
-        case 7: cout << "Июль" << endl; break;
-        case 8: cout << "Августь" << endl; break;
-        case 9: cout << "Сентябрь" << endl; break;
-        case 10: cout << "Октябрь" << endl; break;
-        case 11: cout << "Ноябрь" << endl; break;
-        case 12: cout << "Декабрь" << endl; break;
-        default: cout << "Неправильный номер!" << endl;
-            break;
+        case 0:cout << "Goodbye" << endl; continue;
+        case 1: month = Months::January; break;
+        case 2: month = Months::Febuary; break;
+        case 3: month = Months::March ; break;
+        case 4: month = Months::April; break;
+        case 5: month = Months::May; break;
+        case 6: month = Months::June; break;
+        case 7: month = Months::July; break;
+        case 8: month = Months::August; break;
+        case 9: month = Months::September; break;
+        case 10: month = Months::October; break;
+        case 11: month = Months::November; break;
+        case 12: month = Months::December; break;
+        default: cout << "Wrong number!" << endl; continue;
         }
-    } while (num_month != 0);
+
+        switch (month) {
+        case Months::January: cout << "January" << endl; break;
+        case Months::Febuary:cout << "Febuary" << endl; break;
+        case Months::March:cout << "March" << endl; break;
+        case Months::April:cout << "April" << endl; break;
+        case Months::May:cout << "May" << endl; break;
+        case Months::June:cout << "June" << endl; break;
+        case Months::July:cout << "July" << endl; break;
+        case Months::August:cout << "August" << endl; break;
+        case Months::September:cout << "September" << endl; break;
+        case Months::October:cout << "October" << endl; break;
+        case Months::November:cout << "November" << endl; break;
+        case Months::December:cout << "December" << endl; break;
+        }
+  
+    } while (value != 0);
     return 0;
 }
 
