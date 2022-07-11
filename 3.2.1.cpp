@@ -8,35 +8,35 @@ enum class Months {
 int main()
 {
     setlocale(LC_ALL, "rus");
- 
-    int value=0;
+    Months month = Months::January;
     
+    int value=0;
     do
     {
-       
+
         cout << "Enter month number: ";
         cin >> value;
-
-        switch (value) {
-        case 0:cout << "Goodbye" << endl; continue;
-        case static_cast<int>(Months::January): cout << "January" << endl; break;
-        case static_cast<int>(Months::Febuary):cout << "Febuary" << endl; break;
-        case static_cast<int>(Months::March):cout << "March" << endl; break;
-        case static_cast<int>(Months::April):cout << "April" << endl; break;
-        case static_cast<int>(Months::May):cout << "May" << endl; break;
-        case static_cast<int>(Months::June):cout << "June" << endl; break;
-        case static_cast<int>(Months::July):cout << "July" << endl; break;
-        case static_cast<int>(Months::August):cout << "August" << endl; break;
-        case static_cast<int>(Months::September):cout << "September" << endl; break;
-        case static_cast<int>(Months::October):cout << "October" << endl; break;
-        case static_cast<int>(Months::November):cout << "November" << endl; break;
-        case static_cast<int>(Months::December):cout << "December" << endl; break;
+        month = static_cast<Months>(value);
+        switch (month) {
+        case static_cast < Months>(0):cout << "Goodbye" << endl; continue;
+        case (Months::January): cout << "January" << endl; break;
+        case (Months::Febuary):cout << "Febuary" << endl; break;
+        case (Months::March):cout << "March" << endl; break;
+        case (Months::April):cout << "April" << endl; break;
+        case (Months::May):cout << "May" << endl; break;
+        case (Months::June):cout << "June" << endl; break;
+        case (Months::July):cout << "July" << endl; break;
+        case (Months::August):cout << "August" << endl; break;
+        case (Months::September):cout << "September" << endl; break;
+        case (Months::October):cout << "October" << endl; break;
+        case (Months::November):cout << "November" << endl; break;
+        case (Months::December):cout << "December" << endl; break;
         default: cout << "Wrong number!" << endl; continue;
         }
-  
-    } while (value != 0);
 
+    } while (value != 0);
     
+
     return 0;
 }
 
